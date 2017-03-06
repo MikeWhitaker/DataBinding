@@ -1,0 +1,27 @@
+﻿<Window x:Class="Databinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Databinding"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <local:Coffee x:Key="coffee1"
+                         Name="Fourth Coffee Quencher"
+                         Bean="Arabica"
+                         CountryOfOrigin="Brazil"
+                         Strength="3" />
+    </Window.Resources>
+
+
+    <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,0,3.667,0" Height="290">
+        <TextBox x:Name="textBox" TextWrapping="Wrap" Text="{Binding Source={StaticResource coffee1}, Path=Name}" VerticalAlignment="Top" Width="207" Height="100" Margin="154,0,153.667,0"/>
+        <Button x:Name="button" Content="Increment value in textbox&#xD;&#xA;"/>
+        <TextBlock x:Name="textBlocktbStatic" Text="{Binding Source={StaticResource coffee1}, Path=Name}" />
+        <TextBlock x:Name="textBlockDynamic"  Text="test" />
+        <TextBlock Text="example text placing ..." />
+    </StackPanel>
+
+</Window>
